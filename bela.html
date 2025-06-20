@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Te Amo Isabela</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #fff0f5;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+      color: #d63384;
+      text-shadow: 1px 1px 6px #ff99cc;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 36px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .flutuante {
+      position: absolute;
+      color: #ff1493;
+      font-size: 24px;
+      animation: subir 6s linear infinite;
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌹 Te amo, meu bem 🌹</h1>
+
+  <script>
+    function criarElemento(texto, cor, tamanho) {
+      const el = document.createElement("div");
+      el.classList.add("flutuante");
+      el.innerText = texto;
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.fontSize = tamanho + "px";
+      el.style.color = cor;
+      el.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.body.appendChild(el);
+
+      setTimeout(() => {
+        el.remove();
+      }, 7000);
+    }
+
+    setInterval(() => {
+      criarElemento("❤️", "#ff1493", Math.random() * 20 + 20);
+      criarElemento("Te amo Isabela", "#c2185b", Math.random() * 10 + 22);
+    }, 400);
+  </script>
+
+</body>
+</html>
